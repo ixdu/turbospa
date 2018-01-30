@@ -1,0 +1,37 @@
+* Arhitecture
+  It's the single page application with loading all interface stuff on starting application. 
+  Many requests is combined in one or two batch requests.
+** client
+   Classicаl organization of:
+   - css 
+   - index.html
+   - js
+     whole application logic and templates is contained in js in components
+** server
+   A just nodejs rest server with simple api, but with one feature - the requests may be combined in one
+   request as batch.
+
+* Why it is fast
+  - we don't use any abstractions, all things are done as quickly as possible.
+    For example: menu is js object and menu item also is js object. 
+    When menu item is selected, event is dispatched by menu object and menu object added active class 
+    to menu item and remove active class from previous selected menu item. Just like if you use some web 
+    template engine like react, angular and other. Yes, we do it inside js components with js logic.
+    There is no other faster way.
+  - we make as few requests as possible
+
+* Why do everything manually on javascript and build app from just js object instead using some modern framework like angular, react, vue, something else?
+  I believe that arhitecture and good programmer skill more important than framework or best teoretical practice.
+  There is one way to develop good application:
+  - develop architecture
+  - choose programmers with sufficient skills
+  - develop application
+  But what about development productivity, write simple things is waste of time! No, waste of time is
+  black box with limited api like popular frameworks. If you want do something in your way - you will do
+  it through the ass, always if you use framework.
+
+* Dependencies
+  The Project depends:
+  - from jQuery(for convinient dom manipulations)
+  - bootstrap
+  - some js libraries like yandex maps
